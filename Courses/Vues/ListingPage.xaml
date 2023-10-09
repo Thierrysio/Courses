@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Courses.Vues.ListingPage"
+             Title="ListingPage">
+    <VerticalStackLayout>
+        
+        
+        <ListView x:Name="listViewCoureurs"  SeparatorColor="LightGray" HeightRequest="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="10" BorderColor="LightBlue" CornerRadius="8" Margin="10">
+                            <Grid ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Coureur.CollClasse.Nom}" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Email}" FontSize="Small" TextColor="Black"/>
+
+                                <!-- Vous pouvez ajouter d'autres éléments ici, comme une image ou un bouton -->
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="retour" BackgroundColor="White" TextColor="Navy" Margin="60,0" Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
